@@ -25,3 +25,13 @@ $ npm run start
 $ npm run generate
 ```
 
+### Preview:
+
+#### List Users
+![list users](https://github.com/victorescalante/nux/blob/main/Prueba_1/frontend/static/images/preview-1.png?raw=true)
+
+#### Detail user - Post
+![detail users](https://github.com/victorescalante/nux/blob/main/Prueba_1/frontend/static/images/preview-2.png?raw=true)
+
+#### Detail user - Todo
+![detail users](https://github.com/victorescalante/nux/blob/main/Prueba_1/frontend/static/images/preview-3.png?raw=true)
