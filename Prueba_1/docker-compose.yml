@@ -1,0 +1,33 @@
+version: '3'
+services:
+    front-nginx:
+        container_name: front-nginx
+        image: front-nginx:v1.0.0
+        restart: always
+        build:
+            context: ./
+            dockerfile: ./nginx/Dockerfile
+        environment:
+            - VIRTUAL_HOST=nuxiba.delocatarios.com
+            - LETSENCRYPT_HOST=nuxiba.delocatarios.com
+            - LETSENCRYPT_EMAIL=victorlt.xd3@gmail.com
+        expose:
+            - "80"
+            - "443"
+        networks:
+            - nginx-proxy
+            - net-front-nginx
+    front-nuxt:
+        build: frontend/.
+        container_name: front-nuxt
+        restart: always
+        command:
+            "npm run start"
+        networks:
+            - net-front-nginx
+
+networks:
+     net-front-nginx:
+     nginx-proxy:
+        external:
+            name: ubuntu_nginx-proxy
